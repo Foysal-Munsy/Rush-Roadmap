@@ -36,36 +36,18 @@ bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ;
 
 void solve()
 {
-//    int a[2][2];
-//    in_range(i,1,2)
-//    {
-//        in_range(j,1,2)
-//            cin >> a[i][j];
-//    }
-//    bool ans = false;
-//    in_range(i,1,2)
-//    {
-//        in_range(j,1,2)
-//        {
-//            if(a[1][1]< a[1][2] && a[2][1]< a[2][2] && a[1][1]< a[2][1] && a[1][2]< a[2][2])
-//            {
-//                ans = true;
-//                break;
-//            }
-//        }
-//    }
-//    if(ans)
-//        cout << "YES" << nl;
-//    else
-//        cout << "NO" << nl;
 
-        int a,b,c,d;
-        cin >> a >> b >> c >> d;
+    int a,b,c,d;
+    cin >> a >> b >> c >> d;
 
-        if(c<a && c<d && d<b && a<b)
-            cout << "YES" << nl;
-        else
-            cout << "NO" << nl;
+    if ((b > a && d > c && c > a && d > b) || (a > c && b > d && d > c && b > a) ||
+            (c > d && a > b && b > d && a > c) || (d > b && c > a && a > b && c > d))
+    {
+        cout << "YES" << nl;
+    }
+
+    else
+        cout << "NO" << nl;
 
 
 }
