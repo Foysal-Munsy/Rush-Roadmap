@@ -33,45 +33,41 @@ typedef vector<cd> vcd;
 ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
+int split_and_sum(vector<int> v)
+{
+    sort(v.begin(), v.end());
 
-int num[200];
+    int mid = v.size() / 2;
+    vector<int> left(v.begin(), v.begin() + mid);
+    vector<int> right(v.begin() + mid + (v.size() % 2), v.end());
+
+    int left_sum = accumulate(left.begin(), left.end(), 0);
+    int right_sum = accumulate(right.begin(), right.end(), 0);
+
+    return right_sum - left_sum;
+}
 void solve()
 {
-    ll n; cin >> n;
-    ll a[n][n];
-
-
-    in_range(i,1,n)
+    vector<int> v;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
     {
-        num[i]=0;
-        in_range(j,1,n-1)
-            cin >> a[i][j];
+        int x;
+        cin >> x;
+        v.push_back(x);
     }
-    int ans1, ans2;
-    in_range(i,1,n-2)
-    {
-        in_range(j,1,n)
-        {
-            num[a[j][i]]++;
 
-            if(num[a[j][i]]==n-1)
-                cout<<a[j][i]<<" ";
-        }
-    }
-    in_range(i,1,n)
-    {
-        if(num[i]>=1&&num[i]<n-1)
-            ans1=i;
-        if(num[i]==0)
-            ans2=i;
-    }
-    cout<<ans1<<" "<<ans2<<nl;
+    int result = split_and_sum(v);
+
+    cout << result << nl;
 }
 int main()
 {
     Code By Foysal
     /*----------*/
-    ll t; cin>>t;
+    ll t;
+    cin>>t;
     while(t--)
     {
         solve();

@@ -59,13 +59,17 @@ void solve()
 //    else
 //        cout << "NO" << nl;
 
-        int a,b,c,d;
-        cin >> a >> b >> c >> d;
+    int a,b,c,d;
+    cin >> a >> b >> c >> d;
 
-        if(c<a && c<d && d<b && a<b)
-            cout << "YES" << nl;
-        else
-            cout << "NO" << nl;
+    if ((b > a && d > c && c > a && d > b) || (a > c && b > d && d > c && b > a) ||
+            (c > d && a > b && b > d && a > c) || (d > b && c > a && a > b && c > d))
+    {
+        cout << "YES" << nl;
+    }
+
+    else
+        cout << "NO" << nl;
 
 
 }

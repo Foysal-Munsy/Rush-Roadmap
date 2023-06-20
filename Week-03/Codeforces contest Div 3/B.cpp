@@ -34,38 +34,29 @@ ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
 
-int num[200];
 void solve()
 {
     ll n; cin >> n;
-    ll a[n][n];
-
-
-    in_range(i,1,n)
+    vl a;
+    ll sum=0,curr=0,pos=0;
+    for(ll i=0; i<n; i++)
     {
-        num[i]=0;
-        in_range(j,1,n-1)
-            cin >> a[i][j];
+        int x; cin >> x;
+        a.push_back(x);
+        sum+=abs(a[i]);
     }
-    int ans1, ans2;
-    in_range(i,1,n-2)
+    for(ll i=0; i<n; i++)
     {
-        in_range(j,1,n)
-        {
-            num[a[j][i]]++;
+        if(a[i]<0)pos=1;
 
-            if(num[a[j][i]]==n-1)
-                cout<<a[j][i]<<" ";
+        else if(a[i]>0)
+        {
+            curr+=pos;
+            pos=0;
         }
     }
-    in_range(i,1,n)
-    {
-        if(num[i]>=1&&num[i]<n-1)
-            ans1=i;
-        if(num[i]==0)
-            ans2=i;
-    }
-    cout<<ans1<<" "<<ans2<<nl;
+    curr+=pos;
+    cout << sum << " " << curr << nl;
 }
 int main()
 {
