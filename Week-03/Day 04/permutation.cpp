@@ -34,6 +34,7 @@ ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
 
+<<<<<<< HEAD
 int num[200];
 void solve()
 {
@@ -41,6 +42,15 @@ void solve()
     ll a[n][n];
 
 
+=======
+
+void solve()
+{
+    ll n; cin >> n;
+    ll a[1000][1000];
+
+    int num[200];
+>>>>>>> 9664f11b5cb8ab64e305f599b4c094fe10d0d6f9
     in_range(i,1,n)
     {
         num[i]=0;
