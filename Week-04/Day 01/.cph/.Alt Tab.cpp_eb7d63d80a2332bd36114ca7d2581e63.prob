@@ -1,0 +1,1 @@
+{"name":"Local: Alt Tab","url":"d:\\D Drive\\XPSC\\Week-04\\Day 01\\Alt Tab.cpp","tests":[{"id":1687520336894,"input":"9\nNAUTILUS\nFIREFOX\nGEDIT\nFIREFOX\nNAUTILUS\nWINE\nGIMP\nTERMINAL\nWINE","output":"NEALMPUSOXIT"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-04\\Day 01\\Alt Tab.cpp","group":"local","local":true}
