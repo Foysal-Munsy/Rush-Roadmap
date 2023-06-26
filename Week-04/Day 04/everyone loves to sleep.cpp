@@ -38,57 +38,53 @@ typedef vector<cd> vcd;
 ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
-//O(n^2 log n) --> set not accepted due to TLE
-//use unordered_set<ll> st(v.begin(), v.end());
-//then complexity will be O(n^2) only
-void solve()
+
+//submitted version
+void test()
 {
-    ll n;   cin >> n;
-    vl v; 
-    in_range(i,0,n-1)
-    {
-        ll x;   cin >> x;
-        v.push_back(x);
-    }
-    ll countt = 0;
-    while(1)
-    {
-        unordered_set<ll> st(v.begin(), v.end());
-        if(st.size()==v.size())
-        {
-            break;
-        }
-        v.erase(v.begin());
-        countt++;
-    }
-    cout << countt << nl;
+    ll n,h,m;   cin >> n >> h >> m;
+    ll hour,mnt;
+    ll mnt_cnvrt,ttl_mnt;
+    mnt_cnvrt = (h*60) + m;
+    ll gvn_mnt_cnvrt , ans_hour , ans_mnt;
+
+    ll min_diff = INT_MAX;
+    while(n--)
+    {   
+        cin >> hour >> mnt;
+        gvn_mnt_cnvrt = (hour*60) + mnt;
         
+        if(gvn_mnt_cnvrt < mnt_cnvrt) // handle case where given time is earlier than target time
+            gvn_mnt_cnvrt += 24*60; // add 24 hours to given time
+
+        ttl_mnt = abs(gvn_mnt_cnvrt - mnt_cnvrt);
+        if(ttl_mnt < min_diff)
+        {
+            min_diff = ttl_mnt; 
+            ans_hour = ttl_mnt / 60;
+            ans_mnt = ttl_mnt % 60;
+        }
+    }
+    cout << ans_hour << " " << ans_mnt << nl;   
 }
 
-//ac
-void solve1()
+//trying to readable my code after ac.
+void solve()
 {
-    ll n; cin >> n;
-    vl v;
-    in_range(i,0,n-1)
+    int n, h, m;
+    cin >> n >> h >> m;
+    int target = h * 60 + m;
+    int min_diff = INT_MAX;
+    while (n--)
     {
-        ll x; cin >> x;
-        v.push_back(x);
+        int hour, minute;
+        cin >> hour >> minute;
+        int given = hour * 60 + minute;
+        if (given < target)
+            given += 24 * 60;
+        min_diff = min(min_diff, given - target);
     }
-    reverse(v.begin(),v.end());
-    unordered_set<ll>st;
-    ll ans = 0;
-    in_range(i,0,n-1)
-    {
-        st.insert(v[i]);
-
-        if(st.size() != i+1)
-        {
-            ans = n- st.size();
-            break;
-        }
-    }
-    cout << ans << endl;
+    cout << min_diff / 60 << " " << min_diff % 60 << endl;
 }
 
 int main()
@@ -99,9 +95,10 @@ int main()
     cin>>t;
     while(t--)
     {
-        solve1();
+        solve();
     }
 
-
+ 
     return 0;
 }
+

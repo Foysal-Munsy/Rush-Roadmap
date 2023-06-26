@@ -6,7 +6,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-typedef long long int lli;
 typedef long double ld;
 typedef complex<ld> cd;
 
@@ -26,10 +25,6 @@ typedef vector<cd> vcd;
 #define     f2(j,n)     for(int j=0;j<n;j++)
 #define     in_range(i,x,y) for(int i=x;i<=y;i++)
 #define     in_range_back(i,x,y) for(int i=y;i>=x;i--)
-#define     yes    cout<<"YES"<<nl;
-#define     Yes    cout<<"Yes"<<nl;
-#define     no     cout<<"NO"<<nl;
-#define     No     cout<<"No"<<nl;
 #define     cin_array(x,o,n) for(int i=o;i<=n;i++){cin>>x[i];}
 #define     cout_array(x,o,n) for(int i=o;i<=n;i++){cout<<x[i]<<" ";}cout<<nl;
 #define     Code    ios_base::sync_with_stdio(false);
@@ -38,68 +33,37 @@ typedef vector<cd> vcd;
 ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
-//O(n^2 log n) --> set not accepted due to TLE
-//use unordered_set<ll> st(v.begin(), v.end());
-//then complexity will be O(n^2) only
+
 void solve()
 {
-    ll n;   cin >> n;
-    vl v; 
-    in_range(i,0,n-1)
-    {
-        ll x;   cin >> x;
-        v.push_back(x);
-    }
-    ll countt = 0;
-    while(1)
-    {
-        unordered_set<ll> st(v.begin(), v.end());
-        if(st.size()==v.size())
-        {
-            break;
-        }
-        v.erase(v.begin());
-        countt++;
-    }
-    cout << countt << nl;
-        
-}
-
-//ac
-void solve1()
-{
     ll n; cin >> n;
-    vl v;
-    in_range(i,0,n-1)
-    {
-        ll x; cin >> x;
-        v.push_back(x);
-    }
-    reverse(v.begin(),v.end());
-    unordered_set<ll>st;
-    ll ans = 0;
-    in_range(i,0,n-1)
-    {
-        st.insert(v[i]);
+    vl v(n); cin_array(v,0,n-1);
+    string s; cin >> s;
 
-        if(st.size() != i+1)
+    unordered_map<int, set<char>> mp; //int er jonno set of char
+    in_range(i,0,n-1)
+    {
+        mp[v[i]].insert(s[i]);
+    }
+    for(auto c:mp)
+    {
+        if(c.second.size()>1) //set er size 1 theke greater hole NO
         {
-            ans = n- st.size();
-            break;
+            cout << "NO" << nl;
+            return;
         }
     }
-    cout << ans << endl;
+    cout << "YES" << nl;
+    return;
 }
-
 int main()
 {
     Code By Foysal
     /*----------*/
-    ll t=1; 
-    cin>>t;
+    ll t; cin>>t;
     while(t--)
     {
-        solve1();
+        solve();
     }
 
 
