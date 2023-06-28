@@ -39,40 +39,27 @@ ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
 
-
-ll stringToInt(string& s)
-{
-    ll ans = 0;
-    for (int i = 0; i < s.size(); i++)
-        ans = ans * 10 + (s[i] - '0');
-    return ans;
-}
+//test case running but not accepted
 void solve()
 {
-    ll n;   cin >> n;
-    string st;  cin >> st;
-
-    vector<char>v;
-    
-    in_range_back(i,n-1,0)
+    ll n,k;     cin >> n >> k;
+    vl v;
+    for(ll i=0; i<n; i++)
     {
-        if(st[i]==0)
-        {
-            break;
-        }
-        else
-        {
-           ll x = stringToInt(st);
-           char c = x + 96;
-           v.push_back(c);
-
-        }
+        ll x; cin >> x;
+        v.push_back(x);
     }
-    reverse(v.begin(),v.end());
-    for(auto c: v)
-        cout << c;
+    ll i=0,j = k;
+    if(abs(i-j) >= k && j < n)
+        swap(v[i],v[j]);
+       
+    for(ll i=0; i<n; i++)
+    {
+        cout << v[i] << " ";
+    }
     cout << nl;
 }
+
 int main()
 {
     Code By Foysal
