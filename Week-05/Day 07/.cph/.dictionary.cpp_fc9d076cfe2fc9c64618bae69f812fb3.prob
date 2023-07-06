@@ -1,0 +1,1 @@
+{"name":"Local: dictionary","url":"d:\\D Drive\\XPSC\\Week-05\\Day 07\\dictionary.cpp","tests":[{"id":1688655459602,"input":"7\nab\nac\naz\nba\nbc\nzx\nzy\n","output":"1\n2\n25\n26\n27\n649\n650\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-05\\Day 07\\dictionary.cpp","group":"local","local":true}
