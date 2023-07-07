@@ -1,0 +1,1 @@
+{"name":"Local: make even","url":"d:\\D Drive\\XPSC\\Week-06\\Day 01\\make even.cpp","tests":[{"id":1688721866413,"input":"4\n3876\n387\n4489\n3\n","output":"0\n2\n1\n-1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-06\\Day 01\\make even.cpp","group":"local","local":true}

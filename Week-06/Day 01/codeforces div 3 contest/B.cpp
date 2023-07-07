@@ -38,37 +38,62 @@ typedef vector<cd> vcd;
 ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
 ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
 bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
-
+char a[3][3];
+ll n = 3;
 void solve()
 {
-    string s,t; cin >> s >> t;
-
-    string st=s;
-    ll n = s.size();
-    //s.replace(0,1,t);
-    if (t.size() == 1)
+    for(ll i=0; i<n; i++)
     {
-        if (t[0] == 'a')
+        for(ll j=0;j<n; j++)
         {
-            cout << 1 << endl;
+            cin >> a[i][j];
         }
-        else
-        {
-            //ll ans = (1LL << n);
-            cout << pow(2,n) << endl;
-        }
+    }
+    // for(ll i=0;i<n;i++)
+    // {
+    //     for(ll j=0; j<n; j++)
+    //     {
+    //         if(a[0][0] == '.')
+    //             cout << "DRAW" << nl;
+    //         return;
+    //     }
+    // }
+    
+    if(a[0][0]!='.' && a[0][0] == a[0][1] && a[0][1] == a[0][2])
+    {
+        cout << a[0][0] << nl;
+    }
+    else if(a[1][0]!='.' &&a[1][0] == a[1][1] && a[1][1] == a[1][2])
+    {
+        cout << a[1][0] << nl;
+    }
+    else if(a[2][0]!='.' &&a[2][0] == a[2][1] && a[2][1] == a[2][2])
+    {
+        cout << a[2][0] << nl;
+    }
+    else if(a[0][0]!='.' && a[0][0] == a[1][0] && a[1][0] == a[2][0])//col
+    {
+        cout << a[0][0] << nl;
+    }
+    else if(a[0][1]!='.' && a[0][1] == a[1][1] && a[1][1] == a[2][1])
+    {
+        cout << a[0][1] << nl;
+    }
+    else if(a[0][2]!='.' && a[0][2] == a[1][2] && a[1][2] == a[2][2])
+    {
+        cout << a[0][2] << nl;
+    }
+    else if(a[0][0]!='.' && a[0][0] == a[1][1] && a[1][1] == a[2][2])//dia
+    {
+        cout << a[0][0] << nl;
+    }
+    else if(a[0][2]!='.' && a[0][2] == a[1][1] && a[1][1] == a[2][0])
+    {
+        cout << a[0][2] << nl;
     }
     else
     {
-        if (count(t.begin(), t.end(), 'a') > 0)
-        {
-            cout << -1 << endl;
-        }
-        else
-        {
-           // ll ans = (1LL << n);
-            cout << pow(2,n) << endl;
-        }
+        cout << "DRAW" << nl;
     }
 }
 int main()

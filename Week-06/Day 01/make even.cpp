@@ -41,33 +41,32 @@ bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ;
 
 void solve()
 {
-    string s,t; cin >> s >> t;
-
-    string st=s;
-    ll n = s.size();
-    //s.replace(0,1,t);
-    if (t.size() == 1)
+    int n;
+    cin >> n;
+    vector<int> vec;
+    while (n)
     {
-        if (t[0] == 'a')
-        {
-            cout << 1 << endl;
-        }
-        else
-        {
-            //ll ans = (1LL << n);
-            cout << pow(2,n) << endl;
-        }
+        vec.push_back(n % 10);
+        n /= 10;
     }
+    reverse(vec.begin(), vec.end());
+    if (vec.back() % 2 == 0)
+        cout << 0 << endl;
     else
     {
-        if (count(t.begin(), t.end(), 'a') > 0)
-        {
-            cout << -1 << endl;
-        }
+        if (vec[0] % 2 == 0)
+            cout << 1 << endl;
         else
         {
-           // ll ans = (1LL << n);
-            cout << pow(2,n) << endl;
+            for (int i = 1; i < vec.size() - 1; i++)
+            {
+                if (vec[i] % 2 == 0)
+                {
+                    cout << 2 << endl;
+                    return;
+                }
+            }
+            cout << -1 << endl;
         }
     }
 }
