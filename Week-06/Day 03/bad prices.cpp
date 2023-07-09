@@ -41,25 +41,27 @@ bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ;
 
 void solve()
 {
-    ll n;   cin >> n;
-    vl v;    
-    in_range(i,0,n-1)
+    //3 9 4 6 7 5
+    ll n;    cin >> n;
+    vl a(n);
+    for (ll i = 0; i < n; i++)
     {
-        ll x;   cin >> x;
-        v.push_back(x);
+        cin >> a[i];
     }
-    sort(v.begin(),v.end());
-    
-    ll ans = 1;
-    in_range(i,0,n-1)
+    ll min_price = a[n - 1];
+    // cout << min_price << endl;
+    ll bad_days = 0;
+    for (ll i = n - 2; i >= 0; i--)
     {
-        if(v[i+1]-v[i] == 1)
+        // cout << a[i] <<" -!"<<endl;
+        if (a[i] > min_price)
         {
-            ans = 2;  
+           // cout << a[i] << " greater " << min_price << " so,count= " << bad_days << endl;
+            bad_days++;
         }
+        min_price = min(min_price, a[i]);
     }
-    cout << ans << nl;
-
+    cout << bad_days << endl;
 }
 int main()
 {

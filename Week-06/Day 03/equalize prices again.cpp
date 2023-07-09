@@ -42,22 +42,14 @@ bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ;
 void solve()
 {
     ll n;   cin >> n;
-    vl v;    
-    in_range(i,0,n-1)
+    ld N=n,sum = 0;
+    while(n--)
     {
         ll x;   cin >> x;
-        v.push_back(x);
+        sum +=x;
     }
-    sort(v.begin(),v.end());
+    ll ans = ceil(sum/N);
     
-    ll ans = 1;
-    in_range(i,0,n-1)
-    {
-        if(v[i+1]-v[i] == 1)
-        {
-            ans = 2;  
-        }
-    }
     cout << ans << nl;
 
 }
