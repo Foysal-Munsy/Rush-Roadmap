@@ -1,0 +1,1 @@
+{"name":"Local: snow walking robot","url":"d:\\D Drive\\XPSC\\Week-06\\Day 03\\snow walking robot.cpp","tests":[{"id":1688925469658,"input":"6\nLRU\nDURLDRUDRULRDURDDL\nLRUDDLRUDRUL\nLLLLRRRR\nURDUR\nLLL","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-06\\Day 03\\snow walking robot.cpp","group":"local","local":true}
