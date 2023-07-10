@@ -1,0 +1,1 @@
+{"name":"Local: balanced array","url":"d:\\D Drive\\XPSC\\Week-06\\Day 04\\balanced array.cpp","tests":[{"id":1688994478361,"input":"5\n2\n4\n6\n8\n10","output":"NO\nYES\n2 4 1 5\nNO\nYES\n2 4 6 8 1 3 5 11\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-06\\Day 04\\balanced array.cpp","group":"local","local":true}
