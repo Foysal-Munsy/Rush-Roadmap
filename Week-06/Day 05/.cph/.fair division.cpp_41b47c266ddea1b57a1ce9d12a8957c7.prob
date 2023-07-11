@@ -1,0 +1,1 @@
+{"name":"Local: fair division","url":"d:\\D Drive\\XPSC\\Week-06\\Day 05\\fair division.cpp","tests":[{"id":1689094638489,"input":"5\n2\n1 1\n2\n1 2\n4\n1 2 1 2\n3\n2 2 2\n3\n2 1 2\n","output":"YES\nNO\nYES\nNO\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-06\\Day 05\\fair division.cpp","group":"local","local":true}
