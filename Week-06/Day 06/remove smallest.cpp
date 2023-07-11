@@ -42,27 +42,30 @@ bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ;
 void solve()
 {
     ll n;
-		cin>>n;
-		vector<int>v(n);
-		map<int,int>mp;
-		for(int i=0;i<n;i++){
-			cin>>v[i];
-			mp[v[i]] = max(mp[v[i]],i+1);
-		}
-		int ans = -1;
-		vector<pair<int,int>>arr;
-		for(auto it: mp){
-			arr.push_back(make_pair(it.first,it.second));
-		}
-		for(int i=0;i<arr.size();i++){
-			for(int j=0;j<arr.size();j++){
-				if(gcd(arr[i].first,arr[j].first)==1){
-					ans = max(ans,arr[i].second+arr[j].second);
-				}
-			}
-		}
- 
-		cout<<ans<<endl;
+    cin >> n;
+    vl a(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    sort(a.begin(),a.end());
+    bool possible = true;
+    for (int i = 1; i < n; i++)
+    {
+        if (a[i] - a[i - 1] > 1)
+        {
+            possible = false;
+            break;
+        }
+    }
+    if (possible)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
 }
 int main()
 {
