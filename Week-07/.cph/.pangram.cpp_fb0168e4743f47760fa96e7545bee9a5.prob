@@ -1,0 +1,1 @@
+{"name":"Local: pangram","url":"d:\\D Drive\\XPSC\\Week-07\\pangram.cpp","tests":[{"id":1689326171040,"input":"35\nTheQuickBrownFoxJumpsOverTheLazyDog","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-07\\pangram.cpp","group":"local","local":true}
