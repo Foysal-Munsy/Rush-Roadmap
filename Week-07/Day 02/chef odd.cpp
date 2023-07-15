@@ -35,22 +35,22 @@ typedef vector<cd> vcd;
 #define     Code    ios_base::sync_with_stdio(false);
 #define     By      cin.tie(nullptr);
 #define     Foysal  cout.tie(NULL);
-ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
-ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
-bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}
 
 void solve()
 {
-    ll n;   cin >> n;
-    if(n&1)cout << -1 << nl;
-    else
-    {
-        in_range_back(i,1,n)
-        {
-            cout << i << " ";
-        }
-        cout << nl;
-    }
+    ll n,k; cin >> n >> k;
+
+    ll odd_count=0,rest_odd=0;
+    if(n&1) {odd_count = (n/2)+1;}
+    else {odd_count = n/2;}
+
+    bool sub_set = false;
+    if(n>=2*k) sub_set =true;
+    if(sub_set==false) {cout << "NO" << nl; return;}
+    
+    rest_odd = abs(k-odd_count);
+    if(rest_odd & 1){ cout << "NO" << nl;}
+    else {cout << "YES" << nl;}
 }
 int main()
 {
