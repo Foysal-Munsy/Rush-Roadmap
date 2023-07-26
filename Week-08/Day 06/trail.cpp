@@ -20,10 +20,7 @@ typedef vector<ll> vl;
 typedef vector<pi> vpi;
 typedef vector<pl> vpl;
 typedef vector<cd> vcd;
-#define     nl '\n'
 #define     PI 3.14159265358979323846
-#define     f1(i,n)     for(int i=0;i<n;i++)
-#define     f2(j,n)     for(int j=0;j<n;j++)
 #define     in_range(i,x,y) for(int i=x;i<=y;i++)
 #define     in_range_back(i,x,y) for(int i=y;i>=x;i--)
 #define     yes    cout<<"YES"<<nl;
@@ -32,30 +29,38 @@ typedef vector<cd> vcd;
 #define     No     cout<<"No"<<nl;
 #define     cin_array(x,o,n) for(int i=o;i<=n;i++){cin>>x[i];}
 #define     cout_array(x,o,n) for(int i=o;i<=n;i++){cout<<x[i]<<" ";}cout<<nl;
+#define all_V(v) v.begin(), v.end()
+#define all_A(arr, sz) arr, arr + sz
+#define SIZE(v) (int)v.size()
+#define sort_v(v) sort(all_V(v))
+#define reverse_v(v) reverse(all_V(v))
+#define sort_a(arr, sz) sort(all_A(arr, sz))
+#define reverse_a(arr, sz) reverse(all_A(arr, sz))
 #define     Code    ios_base::sync_with_stdio(false);
 #define     By      cin.tie(nullptr);
 #define     Foysal  cout.tie(NULL);
+#define     nl '\n'
+ll gcd(ll a, ll b);
+ll lcm(ll a, ll b);
+bool is_palindrome(int n);
 
 void solve()
 {
-    int n, m, k, H;
-    cin >> n >> m >> k >> H;
-    vector<int> h(n);
-    for (int i = 0; i < n; i++)
+    int n; cin >> n;
+    int arr[n]; cin_array(arr,0,n-1);
+    vector<int> v; 
+    for(int i=0; i<n; i++)
     {
-        cin >> h[i];
+        int x;  cin >> x;
+        v.push_back(x);
     }
-    int count = 0,diff_step=0,diff_person=0;
-    for (int i = 0; i < n; i++)
-    {
-        diff_person = abs(H - h[i]);
-        for(int j=1; j<m; j++){
-                diff_step = ((j+1)*k)-k;
-                if(diff_person==diff_step)
-                    count++;
-            }
-    }
-    cout << count << endl;
+
+    sort_a(arr,n);
+    cout_array(arr,0,n-1);
+    cout << nl;
+    sort_v(v);
+    for(int i=0; i<n; i++)
+    cout << v[i] << " ";
 }
 int main()
 {
@@ -71,3 +76,7 @@ int main()
 
     return 0;
 }
+/* HELLO CPP*/
+ll gcd(ll a, ll b){if (b == 0)return a;return gcd(b, a % b);}
+ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
+bool is_palindrome(int n){string str = to_string(n);for(int i=0,j=str.size()-1 ; i<=j ; i++,j--){if(str[i]!=str[j]) return false;}return true;}

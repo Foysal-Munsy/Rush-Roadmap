@@ -6,20 +6,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-typedef long long int lli;
-typedef long double ld;
-typedef complex<ld> cd;
-
-typedef pair<int, int> pi;
-typedef pair<ll,ll> pl;
-typedef pair<ld,ld> pd;
-
-typedef vector<int> vi;
-typedef vector<ld> vd;
-typedef vector<ll> vl;
-typedef vector<pi> vpi;
-typedef vector<pl> vpl;
-typedef vector<cd> vcd;
 #define     nl '\n'
 #define     PI 3.14159265358979323846
 #define     f1(i,n)     for(int i=0;i<n;i++)
@@ -36,26 +22,16 @@ typedef vector<cd> vcd;
 #define     By      cin.tie(nullptr);
 #define     Foysal  cout.tie(NULL);
 
+int fib(int n)
+{
+    if(n==1)return 1;
+    if(n==2)return 1;
+    return fib(n-1)+fib(n-2);
+}
 void solve()
 {
-    int n, m, k, H;
-    cin >> n >> m >> k >> H;
-    vector<int> h(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> h[i];
-    }
-    int count = 0,diff_step=0,diff_person=0;
-    for (int i = 0; i < n; i++)
-    {
-        diff_person = abs(H - h[i]);
-        for(int j=1; j<m; j++){
-                diff_step = ((j+1)*k)-k;
-                if(diff_person==diff_step)
-                    count++;
-            }
-    }
-    cout << count << endl;
+    int n;  cin >> n;
+    cout << fib(n) << nl;
 }
 int main()
 {

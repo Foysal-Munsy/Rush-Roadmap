@@ -1,0 +1,1 @@
+{"name":"Local: fibonacci","url":"d:\\D Drive\\XPSC\\Week-08\\Day 06\\Recursion recap\\fibonacci.cpp","tests":[{"id":1690379481743,"input":"14\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\D Drive\\XPSC\\Week-08\\Day 06\\Recursion recap\\fibonacci.cpp","group":"local","local":true}
