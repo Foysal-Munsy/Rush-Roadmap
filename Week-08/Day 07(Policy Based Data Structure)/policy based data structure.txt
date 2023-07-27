@@ -1,0 +1,25 @@
+Policy Based Data Structure:
+---------------------------
+Pbds same as set, but it is a very powerful tool for problem solving.
+In set, we cannot get access any index, but using pbds we can get access indexing.
+time complexity--> O(log n)
+
+find_by_order(K) --> K-th element in a set(counting from zero)/indexing;
+order_of_key(K) --> Number of items strictly smaller than K;
+
+
+for more info:
+multiset--> does allow duplicate value in asc order;
+set--> does allow unique value in asc order;
+
+
+
+template of pbds:
+-----------------
+
+#include <bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+using namespace std;;
+template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
