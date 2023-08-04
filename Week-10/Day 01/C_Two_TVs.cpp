@@ -42,47 +42,45 @@ typedef vector<cd> vcd;
 #define sort_a(arr, sz) sort(all_A(arr, sz))
 #define reverse_a(arr, sz) reverse(all_A(arr, sz))
 #define nl '\n'
-/*
-1 -1
-2 -2
-5 -3
-0 -4
-3 -5
-1 -6
-0 -7
-2 -8
-4 -9
-2
-7
-1010110
-10
-1011011010
 
-*/
 void solve()
 {
-    ll t, n, i;
-    string s;
-    cin >> n >> s;
-    for (i = 0; i < n / 2; i++)
+    ll n;
+    cin >> n;
+    map<ll, ll> prefix;
+    in_range(i, 1, n)
     {
-        if (s[i] == s[n - 1 - i])
-            break; // first index == last index
+        ll l, r;
+        cin >> l >> r;
+        prefix[l]++;
+        prefix[r + 1]--;
     }
-    // cout << i << nl;
-    cout << n - (i * 2) << nl;
+    ll sum = 0;
+    bool flag = true;
+    for (auto i : prefix)
+    {
+        auto idx = i.first, val = i.second;
+        sum += val;
+        if (sum > 2)
+        {
+            flag = false;
+            break;
+        }
+    }
+    if (flag)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
 }
 signed main()
 {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     /*-----Code By Foysal-----*/
-    ll t = 1;
-    cin >> t;
+    ll t = 1; // cin>>t;
     while (t--)
     {
         solve();
     }
-    // solve();
     return 0;
 }
