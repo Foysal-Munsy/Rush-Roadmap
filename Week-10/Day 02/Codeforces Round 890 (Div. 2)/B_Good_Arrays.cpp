@@ -33,38 +33,32 @@ typedef vector<cd> vcd;
 #define sort_a(arr, sz) sort(all_A(arr, sz))
 #define reverse_a(arr, sz) reverse(all_A(arr, sz))
 #define     nl '\n'
+
 void solve()
 {
-    ll n, q;
-    cin >> n >> q;
-    vector<ll> arr(n), diff(n + 1);
-    cin_array(arr, 0, n - 1);
-    while (q--)
+    ll n;       cin >> n;
+    ll sum = 0, count = 0;
+    in_range(i,0,n-1)
     {
-        ll l, r;
-        cin >> l >> r;
-        l--,r--;
-        diff[l]++;
-        diff[r + 1]--;
+        ll x;   cin >> x;
+        sum +=x;
+        if(x==1)count++;
     }
-    for (ll i = 1; i <= n; i++) //prefix sum
-        diff[i] = diff[i - 1] + diff[i];
-
-    sort(arr.begin(), arr.end(), greater<ll>());
-    sort(diff.begin(), diff.end(), greater<ll>());
-
-    ll sum = 0;
-    for (ll i = 0; i < n; i++)
-        sum += (diff[i] * arr[i]);
-
-    cout << sum << nl;
+    ll ans = sum - n;
+    //cout << count << " " << ans << nl;
+    if(ans >= count && n!=1)
+    {
+        cout << "YES\n";
+    }
+    else cout << "NO\n";
+    
 }
 signed main()
 {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     /*-----Code By Foysal-----*/
-    ll t=1; //cin>>t;
+    ll t=1; cin>>t;
     while(t--)
     {
         solve();
