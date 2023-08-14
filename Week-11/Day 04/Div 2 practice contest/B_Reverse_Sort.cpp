@@ -31,48 +31,40 @@ typedef vector<cd> vcd;
 
 void solve()
 {
-    string a ,b , c;
-    cin >> a;
-    char min_char = a[0];
-    for (auto ch : a)
+    ll n;
+    cin >> n;
+    vector<char> a;
+    ll zeroes = 0, ones = 0;
+    for (ll i = 0; i < n; i++)
     {
-        if (ch < min_char)
-        {
-            min_char = ch;
-        }
-    }
-    // for (int i = 0; i < a.size(); i++)
-    // {
-    //     if (a[i] < min_char)
-    //     {
-    //         min_char = a[i];
-    //     }
-    // }
-    b = min_char;
-    bool removed = false;
-    for (auto ch : a)
-    {
-        if (ch == min_char && !removed)
-        {
-            removed = true;
-        }
+        char c;
+        cin >> c;
+        if (c == '0')
+            zeroes++;
         else
-        {
-            c += ch;
-        }
+            ones++;
     }
-    // for (int i = 0; i < a.size(); i++)
-    // {
-    //     if (a[i] == min_char && !removed)
-    //     {
-    //         removed = true;
-    //     }
-    //     else
-    //     {
-    //         c += a[i];
-    //     }
-    // }
-    cout << b << " " << c << nl;
+    if (zeroes == 0)
+    {
+        cout << "0\n";
+    }
+    else
+    {
+        cout << "1\n";
+        cout << 2 * zeroes << " ";
+        for (ll i = 0; i < n; i++)
+        {
+            if (i < n - ones && a[i] == '1')
+            {
+                cout << i + 1 << " ";
+            }
+            else if (i >= n - ones && a[i] == '0')
+            {
+                cout << i + 1 << " ";
+            }
+        }
+        cout << "\n";
+    }
 }
 signed main()
 {

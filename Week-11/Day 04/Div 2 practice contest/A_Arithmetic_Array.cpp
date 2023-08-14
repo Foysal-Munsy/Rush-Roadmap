@@ -31,48 +31,7 @@ typedef vector<cd> vcd;
 
 void solve()
 {
-    string a ,b , c;
-    cin >> a;
-    char min_char = a[0];
-    for (auto ch : a)
-    {
-        if (ch < min_char)
-        {
-            min_char = ch;
-        }
-    }
-    // for (int i = 0; i < a.size(); i++)
-    // {
-    //     if (a[i] < min_char)
-    //     {
-    //         min_char = a[i];
-    //     }
-    // }
-    b = min_char;
-    bool removed = false;
-    for (auto ch : a)
-    {
-        if (ch == min_char && !removed)
-        {
-            removed = true;
-        }
-        else
-        {
-            c += ch;
-        }
-    }
-    // for (int i = 0; i < a.size(); i++)
-    // {
-    //     if (a[i] == min_char && !removed)
-    //     {
-    //         removed = true;
-    //     }
-    //     else
-    //     {
-    //         c += a[i];
-    //     }
-    // }
-    cout << b << " " << c << nl;
+    cout << "HELOO\n";
 }
 signed main()
 {
