@@ -10,23 +10,25 @@ typedef long long ll;
 
 void solve()
 {
-    int n, t;
-    cin >> n >> t;
-    string s;
-    cin >> s;
-    while (t--)
+    int n;
+    cin >> n;
+    vector<int> a, b;
+    int ans = 0, mx = 0;
+    for (; n--;)
     {
-        for (int i = 0; i < n; i++)
-        {
-            if (s[i] == 'B' and s[i + 1] == 'G')
-            {
-                swap(s[i], s[i + 1]);
-                i += 1;
-            }
-        }
+        int exit, enter;
+        cin >> exit >> enter;
+        // int ache = abs(exit-enter);//3
+        // a.push_back(exit);
+        // b.push_back(enter);
+        ans -= exit;
+        ans += enter;
+        mx = max(mx, ans);
     }
-
-    cout << s << nl;
+    cout << mx << nl;
+    // int mx = *max_element(a.begin(), a.end());
+    // int mn = *min_element(b.begin(), b.end());
+    // cout << mx + mn << nl;
 }
 signed main()
 {
