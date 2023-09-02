@@ -8,33 +8,38 @@ using namespace std;
 typedef long long ll;
 #define nl '\n'
 
-void solution()
+void solve()
 {
     int x;
     cin >> x;
     vector<int> ans;
 
-    int n = x;
-    for (int i = 0; i < n; i += 2)
+    int n = 1;
+    while (n <= x)
     {
-        if ((1 << i) <= x)
-            ans.push_back(1 << i);
+        ans.push_back(n);
+        n *= 2;
     }
-    if (ans.back() != 1)
+    if (ans.back() != x)
     {
+
         int diff = x - ans.back();
-        for (int i = 30; i >= 0; i--)
+
+        // 14-8=6
+        int i = 32;
+        for (; i > 0;)
         {
+            int sesh = ans.back();
             if (diff & (1 << i))
-                ans.push_back(ans.back() + (1 << i));
+                ans.push_back(sesh + (1 << i));
+            i--;
         }
     }
-
-    cout << ans.size() << "\n";
     reverse(ans.begin(), ans.end());
-    for (int i : ans)
+    cout << ans.size() << nl;
+    for (auto i : ans)
         cout << i << " ";
-    cout << "\n";
+    cout << nl;
 }
 signed main()
 {
@@ -47,8 +52,7 @@ signed main()
     for (; t--;)
     {
         // cout << "#case " << cs << " :\n";
-        // solve();
-        solution();
+        solve();
         cs++;
     }
     return 0;
