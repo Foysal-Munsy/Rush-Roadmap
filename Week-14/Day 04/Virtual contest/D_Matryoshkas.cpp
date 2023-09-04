@@ -12,27 +12,37 @@ void solve()
 {
     ll n;
     cin >> n;
-    vector<ll> v;
-    deque<ll> dq;
-    for (int i = 0; i < n; i++)
+    multiset<ll> ms;
+    for (; n--;)
     {
         ll x;
         cin >> x;
-        dq.push_back(x);
+        ms.insert(x);
     }
-    sort(dq.begin(), dq.end());
-    // for (auto i : dq)
+    // for (auto i : ms)
     //     cout << i << " ";
     // cout << nl;
-    // 4 2 2 3 4
-    // 2 2 3 4 4
-    int ans = 1;
-    for (int i = 1; i < n; i++)
+    ll count = 0;
+    for (; !ms.empty();)
     {
-        if (dq[i - 1] + 1 != dq[i])
-            ans++;
+        ll ekhon = *ms.begin();
+        for (; 1;)
+        {
+            auto porerta = ms.find(ekhon + 1);
+            if (porerta != ms.end())
+            {
+                ekhon++;
+                ms.erase(porerta);
+            }
+            else
+            {
+                ms.erase(ms.begin());
+                count++;
+                break;
+            }
+        }
     }
-    cout << ans << nl;
+    cout << count << nl;
 }
 signed main()
 {

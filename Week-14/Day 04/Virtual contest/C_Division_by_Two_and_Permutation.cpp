@@ -8,31 +8,35 @@ using namespace std;
 typedef long long ll;
 #define nl '\n'
 
-void solve()
+void test()
 {
     ll n;
     cin >> n;
-    vector<ll> v;
-    deque<ll> dq;
+    vector<ll> v(n + 1);
+    for (int i = 0; i < n; i++)
+        cin >> v[i];
+    unordered_map<ll, ll> mp;
     for (int i = 0; i < n; i++)
     {
-        ll x;
-        cin >> x;
-        dq.push_back(x);
+        ll x = v[i];
+        while (x > n)
+            x /= 2;
+        while (mp[x] == 1)
+            x /= 2;
+        if (x > 0)
+            mp[x] = 1;
     }
-    sort(dq.begin(), dq.end());
-    // for (auto i : dq)
-    //     cout << i << " ";
-    // cout << nl;
-    // 4 2 2 3 4
-    // 2 2 3 4 4
-    int ans = 1;
-    for (int i = 1; i < n; i++)
+    ll ans = 0;
+    for (int i = 1; i <= n; i++)
     {
-        if (dq[i - 1] + 1 != dq[i])
-            ans++;
+        if (mp[i] == 0)
+        {
+            ans = 1;
+            break;
+        }
     }
-    cout << ans << nl;
+
+    cout << (ans == 0 ? "YES\n" : "NO\n");
 }
 signed main()
 {
@@ -45,7 +49,7 @@ signed main()
     for (; t--;)
     {
         // cout << "#case " << cs << " :\n";
-        solve();
+        test();
         cs++;
     }
     return 0;

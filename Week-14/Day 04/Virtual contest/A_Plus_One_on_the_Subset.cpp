@@ -10,29 +10,17 @@ typedef long long ll;
 
 void solve()
 {
-    ll n;
+    int n;
     cin >> n;
-    vector<ll> v;
-    deque<ll> dq;
-    for (int i = 0; i < n; i++)
+    int mn = 1e9, mx = -1e9;
+    for (; n--;)
     {
-        ll x;
+        int x;
         cin >> x;
-        dq.push_back(x);
+        mn = min(mn, x);
+        mx = max(mx, x);
     }
-    sort(dq.begin(), dq.end());
-    // for (auto i : dq)
-    //     cout << i << " ";
-    // cout << nl;
-    // 4 2 2 3 4
-    // 2 2 3 4 4
-    int ans = 1;
-    for (int i = 1; i < n; i++)
-    {
-        if (dq[i - 1] + 1 != dq[i])
-            ans++;
-    }
-    cout << ans << nl;
+    cout << mx - mn << nl;
 }
 signed main()
 {
