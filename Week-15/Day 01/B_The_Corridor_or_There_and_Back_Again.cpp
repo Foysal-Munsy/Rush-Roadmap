@@ -8,8 +8,26 @@ using namespace std;
 typedef long long ll;
 #define nl '\n'
 
-void solve()
+void test()
 {
+    int n;
+    cin >> n;
+    vector<pair<int, int>> vp;
+    for (; n--;)
+    {
+        int di, si;
+        cin >> di >> si;
+        vp.push_back({di, si});
+    }
+
+    int obosthan = 0, jaite_parbo = 0, ans = 1e9;
+    for (auto [di, si] : vp)
+    {
+        obosthan = di;
+        jaite_parbo = (si - 1) / 2;
+        ans = min(ans, obosthan + jaite_parbo);
+    }
+    cout << ans << nl;
 }
 signed main()
 {
@@ -22,7 +40,8 @@ signed main()
     for (; t--;)
     {
         // cout << "#case " << cs << " :\n";
-        solve();
+        // solve();
+        test();
         cs++;
     }
     return 0;

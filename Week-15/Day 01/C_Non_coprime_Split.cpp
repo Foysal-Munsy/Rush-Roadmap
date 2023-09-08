@@ -10,6 +10,30 @@ typedef long long ll;
 
 void solve()
 {
+    int L, R;
+    cin >> L >> R;
+    if (R <= 3)
+    {
+        cout << "-1\n";
+        return;
+    }
+    if (R % 2 == 0)
+    {
+        cout << 2 << " " << R - 2 << "\n";
+        return;
+    }
+    if (L < R)
+    {
+        cout << 2 << " " << R - 3 << "\n";
+        return;
+    }
+    for (int p = 2; p * p <= R; p++)
+        if (R % p == 0)
+        {
+            cout << p << " " << R - p << "\n";
+            return;
+        }
+    cout << "-1\n";
 }
 signed main()
 {

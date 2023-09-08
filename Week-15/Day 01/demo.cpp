@@ -10,6 +10,19 @@ typedef long long ll;
 
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<int> v;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        v.push_back(x);
+    }
+    sort(v.begin(), v.end());
+    for (auto i : v)
+        cout << i << " ";
+    cout << nl;
 }
 signed main()
 {
@@ -18,7 +31,7 @@ signed main()
     /*-----Code By Foysal-----*/
     ll cs = 1;
     ll t = 1;
-    cin >> t;
+    // cin >> t;
     for (; t--;)
     {
         // cout << "#case " << cs << " :\n";

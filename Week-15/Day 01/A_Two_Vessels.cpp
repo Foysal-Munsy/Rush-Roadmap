@@ -10,6 +10,21 @@ typedef long long ll;
 
 void solve()
 {
+    vector<int> a(3);
+    for (auto &i : a)
+        cin >> i;
+
+    int max_val = max(a[0], a[1]);
+    int min_val = min(a[0], a[1]);
+
+    int moves = 0;
+    for (; max_val > min_val;)
+    {
+        max_val -= a[2];
+        min_val += a[2];
+        moves++;
+    }
+    cout << moves << nl;
 }
 signed main()
 {
