@@ -7,33 +7,38 @@
 using namespace std;
 typedef long long ll;
 #define nl '\n'
-
+bool is_prime(ll n)
+{
+    if (n <= 1)
+        return false;
+    for (ll i = 2; i <= sqrt(n); i++)
+        if (n % i == 0)
+            return false;
+    return true;
+}
 void solve()
 {
-    int L, R;
-    cin >> L >> R;
-    if (R <= 3)
+    ll A, B;
+    cin >> A >> B;
+    // A to B
+    ll evn = A;
+    bool two = false;
+    if (A & 1)
     {
-        cout << "-1\n";
-        return;
+        evn = A + 1;
+        if (evn == 2)
+            two = true;
     }
-    if (R % 2 == 0)
+    if (A != B and !two)
     {
-        cout << 2 << " " << R - 2 << "\n";
-        return;
+        cout << evn / 2 << " " << evn / 2 << nl;
     }
-    if (L < R)
+    else if (A == B)
     {
-        cout << 2 << " " << R - 3 << "\n";
-        return;
+        cout << (is_prime(A) ? -1 : __gcd(A, B)) << ' ' << (is_prime(A) ? "\n" : n - __gcd(A, B)) << nl;
     }
-    for (int p = 2; p * p <= R; p++)
-        if (R % p == 0)
-        {
-            cout << p << " " << R - p << "\n";
-            return;
-        }
-    cout << "-1\n";
+    else
+        cout << -1 << nl;
 }
 signed main()
 {
