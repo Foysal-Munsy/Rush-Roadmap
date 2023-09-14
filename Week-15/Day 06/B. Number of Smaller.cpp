@@ -12,11 +12,22 @@ void solve()
 {
     int N, M;
     cin >> N >> M;
-    vector<int> A(N), B(M), C(N + M);
-    for (auto &i : A)
-        cin >> i;
-    for (auto &i : B)
-        cin >> i;
+    vector<int> A(N + 1), B(M + 1), C;
+    for (int i = 0; i < N; i++)
+        cin >> A[i];
+    for (int i = 0; i < M; i++)
+        cin >> B[i];
+    A[N] = 1e9, B[M] = 1e9;
+    int i = 0;
+    for (int j = 0; j < M; j++)
+    {
+        while (A[i] < B[j])
+            i++;
+        C.push_back(i);
+    }
+    for (auto ans : C) 
+        cout << ans << " ";
+    cout << nl;
 }
 signed main()
 {
