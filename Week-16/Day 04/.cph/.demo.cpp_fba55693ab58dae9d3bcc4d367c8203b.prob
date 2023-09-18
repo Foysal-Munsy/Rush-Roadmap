@@ -1,0 +1,1 @@
+{"name":"Local: demo","url":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-16/Day 04/demo.cpp","tests":[{"id":1695009548237,"input":"2 3\n0 1\n1 2 3","output":""},{"id":1695053348935,"input":"3 1\n1 1 2\n1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-16/Day 04/demo.cpp","group":"local","local":true}
