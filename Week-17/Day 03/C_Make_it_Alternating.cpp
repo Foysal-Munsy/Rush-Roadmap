@@ -15,10 +15,7 @@ string s;
 void solve()
 {
     cin >> s;
-    // 10010
     ll n = s.length();
-    // 5
-
     vector<ll> V;
     ll count = 0, last_indx = n - 1;
     for (ll i = 0; i < n; i++)
@@ -30,10 +27,6 @@ void solve()
             count = 0;
         }
     }
-    // for (auto val : V)
-    //     cout << val << " ";
-
-    // V = [1,2,1,1];
     ll min_operations = 0, short_sequence = 1;
 
     for (auto val : V)
