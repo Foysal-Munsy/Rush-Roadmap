@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "__tree": "cpp",
+        "set": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
