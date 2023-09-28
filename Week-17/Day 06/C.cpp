@@ -1,27 +1,29 @@
 /*----------------------------*
  *   -----------------------   *
  *    Author: Foysal Munsy     *
- *    Date: 2023/09/26         *
- *    Time: 21:36:00           *
+ *    Date: 2023/09/27         *
+ *    Time: 20:45:18           *
  *   -----------------------   *
  *-----------------------------*/
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-ll mod = 5 * 1e9;
 #define nl '\n'
 
 void solve()
 {
-    ll N, K, X;
-    cin >> N >> K >> X;
-
-    ll L = K * (K + 1) / 2;
-    ll R = L + (N - K) * K;
-
-    cout << (L <= X and X <= R ? "YES\n" : "NO\n");
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+        sum += v[i];
+    }
+    sort(v.begin(), v.end());
+    cout << sum - v[0] << nl;
 }
-
 signed main()
 {
     ios::sync_with_stdio(false);
