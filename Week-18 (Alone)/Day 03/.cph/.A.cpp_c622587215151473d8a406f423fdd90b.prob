@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-18 (Alone)/Day 03/A.cpp","tests":[{"id":1696143785513,"input":"2\n5 3 3\n1 1 7\n7 1 5\n1 2 5 6 8","output":"9\n21"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-18 (Alone)/Day 03/A.cpp","group":"local","local":true}
