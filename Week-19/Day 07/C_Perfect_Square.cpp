@@ -41,7 +41,7 @@ void solve()
         }
     }
 
-    cout << ans << endl;
+    cout << ans << nl;
 }
 signed main()
 {
