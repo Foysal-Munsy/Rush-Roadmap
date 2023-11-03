@@ -1,0 +1,1 @@
+sliding window technique , bitwise or should be odd if the rightmost element is 1
