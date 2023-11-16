@@ -1,0 +1,1 @@
+{"name":"Local: nfa","url":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-24/Day 04/nfa.cpp","tests":[{"id":1699854450082,"input":"(a|b)*abb","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-24/Day 04/nfa.cpp","group":"local","local":true}
