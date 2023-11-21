@@ -1,0 +1,1 @@
+{"name":"Local: nfa to dfa","url":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-25/Day 04/nfa to dfa.cpp","tests":[{"id":1700465557099,"input":"(a|b)*abb","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-25/Day 04/nfa to dfa.cpp","group":"local","local":true}
