@@ -1,0 +1,1 @@
+{"name":"Local: first","url":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-28/Day 05/first.cpp","tests":[{"id":1702382478046,"input":"2\n10 4\n7 3","output":"10\n7"},{"id":1702383067764,"input":"1\n7 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-28/Day 05/first.cpp","group":"local","local":true}
