@@ -1,6 +1,6 @@
 # Rush-Roadmap
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <img src="https://github.com/Foysal-Munsy/Rush-Roadmap/blob/main/1.%20Need/dream.jpeg" alt="Your Image">
+  <img src="https://github.com/Foysal-Munsy/Rush-Roadmap/blob/main/1.%20Need/dream.jpeg" alt="Dream" width="500">
 </div>
 
 
