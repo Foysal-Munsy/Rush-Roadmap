@@ -1,6 +1,6 @@
 //
-// Created by Foysal Munsy on 20 / 12 / 2023
-// Time: 17 : 14 : 08
+// Created by Foysal Munsy on 21 / 12 / 2023
+// Time: 15 : 45 : 06
 //
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,6 +8,7 @@ typedef long long ll;
 typedef long double ld;
 #define nl '\n'
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #ifdef LOKAL
 #include "DEBUG_TEMPLATE.h"
 #else
@@ -20,34 +21,19 @@ void solve()
 {
     ll n;
     cin >> n;
-    vector<ll> a(n), b(n), alice, bob;
+    vector<ll> a(n);
     for (auto &i : a)
         cin >> i;
-    for (auto &i : b)
-        cin >> i;
-
-    vector<pair<ll, ll>> track(n);
+    sort(rall(a));
+    ll s_a = 0, s_b = 0;
     for (ll i = 0; i < n; i++)
-        track[i] = {a[i] + b[i], i};
-    sort(all(track));
-    debug(track);
-    ll res = 0, idx = 0;
-    for (ll i = n - 1; i >= 0; i--)
     {
-        ll point = track[i].second;
-        if (!(idx & 1))
-            alice.push_back(a[point] - 1);
-
-        else
-            bob.push_back(b[point] - 1);
-        debug(alice, bob);
-        idx++;
+        if (i % 2 == 0 and a[i] % 2 == 0)
+            s_a += a[i];
+        else if (i % 2 != 0 and a[i] % 2 != 0)
+            s_b += a[i];
     }
-    for (auto &i : alice)
-        res += i;
-    for (auto &i : bob)
-        res -= i;
-    cout << res << '\n';
+    cout << ((s_a == s_b) ? "Tie\n" : (s_a > s_b ? "Alice\n" : "Bob\n"));
 }
 
 signed main()
