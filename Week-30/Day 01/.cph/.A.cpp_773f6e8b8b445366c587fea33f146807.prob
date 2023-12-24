@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-30/Day 01/A.cpp","tests":[{"id":1703253850147,"input":"7\n3905\n59916\n57\n15\n52\n1\n0","output":"NO\nYES\nYES\nYES\nNO\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mrfm/Documents/XPSC/Rush-Roadmap/Week-30/Day 01/A.cpp","group":"local","local":true}
