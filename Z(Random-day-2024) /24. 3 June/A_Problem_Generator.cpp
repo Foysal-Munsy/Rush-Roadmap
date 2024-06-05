@@ -1,0 +1,67 @@
+//
+// Created by Foysal Munsy on 03 / 06 / 2024
+// Time: 20 : 40 : 04
+//
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef long double ld;
+#define nl '\n'
+#define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
+#ifdef LOKAL
+#include "DEBUG_TEMPLATE.h"
+#else
+#define HERE
+#define debug(args...)
+#endif
+const int N = 2e5 + 5;
+
+void solve()
+{
+    int n, m;
+    cin >> n >> m;
+    int lagbe = m * 7;
+    string s;
+    cin >> s;
+
+    map<char, int> mp;
+    for (char ch = 'A'; ch <= 'G'; ch++)
+    {
+        mp[ch] = 0;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        mp[s[i]]++;
+    }
+    // debug(mp);
+    int cnt = 0;
+    while (m--)
+    {
+        for (auto &p : mp)
+        {
+            if (p.second <= 0)
+                cnt++;
+            p.second--;
+        }
+    }
+    // debug(mp, cnt);
+    cout << cnt << '\n';
+}
+signed main()
+{
+#ifndef LOKAL
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+#endif
+    ll cs = 1;
+    ll t = 1;
+    cin >> t;
+    for (; t--;)
+    {
+        // cout << "#case " << cs << " :\n";
+        solve();
+        cs++;
+    }
+    return 0;
+}
